@@ -1,4 +1,4 @@
-# quickDraw
+# Google Quick Draw classification!
 
 This code will only work on thr Python with 64-bit installer
 
