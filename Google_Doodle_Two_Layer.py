@@ -3,12 +3,12 @@ from tkinter import *
 from PIL import ImageTk, Image, ImageDraw
 import PIL
 
-data_airplane = np.load("./src/dataset/airplane_quickdraw.npy")
-data_computer = np.load("./src/dataset/computer_quickdraw.npy")
-data_line = np.load("./src/dataset/line_quickdaw.npy")
-data_lighting = np.load("./src/dataset/lighting_quickdraw.npy")
-data_birthday_cake = np.load("./src/dataset/birthdaycake_quickdraw.npy")
-data_star = np.load("./src/dataset/star_quickdraw.npy")
+data_airplane = np.load("./src/dataset/airplane_quickdraw.npy") # Path of the dataset, change it as per your needs
+data_computer = np.load("./src/dataset/computer_quickdraw.npy") # Path of the dataset, change it as per your needs
+data_line = np.load("./src/dataset/line_quickdaw.npy") # Path of the dataset, change it as per your needs
+data_lighting = np.load("./src/dataset/lighting_quickdraw.npy") # Path of the dataset, change it as per your needs
+data_birthday_cake = np.load("./src/dataset/birthdaycake_quickdraw.npy") # Path of the dataset
+data_star = np.load("./src/dataset/star_quickdraw.npy") # Path of the dataset, change it as per your needs
 
 
 def divide_traing_testing(a1, a2, data):
@@ -53,7 +53,7 @@ def createImage():
         draw.line([x1, y1, x2, y2], fill='black', width=10)
 
     def save():
-        file_name = "./src/images/Google_Doodle_two.png"
+        file_name = "./src/images/Google_Doodle_two.png" # Path of the image_file or input_image, change it as per your needs
         image1.thumbnail((128, 128))
         i1 = image1.resize((28, 28), Image.ANTIALIAS)
         i1.save(file_name)
@@ -68,7 +68,7 @@ def createImage():
     button = Button(text="Save", command=save)
     button.pack()
     root.mainloop()
-    open1 = Image.open("./src/images/Google_Doodle_two.png")
+    open1 = Image.open("./src/images/Google_Doodle_two.png") # Path of the image_file or input_image, change it as per your needs
     b = list(open1.getdata())
     m1 = np.reshape(b, (784, 1))
     m1 = (255 - m1) / 255.0
