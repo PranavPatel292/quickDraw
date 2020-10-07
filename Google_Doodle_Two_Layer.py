@@ -9,8 +9,8 @@ from tkinter import *
 from PIL import ImageTk, Image, ImageDraw
 import PIL
 loop_counter = 3    # a counter deciding the numbers of time the training should perform
-# loading the data from the local device
 
+# loading the data from the local device
 data_airplane = np.load("./src/dataset/airplane_quickdraw.npy")
 data_computer = np.load("./src/dataset/computer_quickdraw.npy")
 data_line = np.load("./src/dataset/line_quickdaw.npy")
@@ -19,7 +19,6 @@ data_birthday_cake = np.load("./src/dataset/birthdaycake_quickdraw.npy")
 data_star = np.load("./src/dataset/star_quickdraw.npy")
 
 # function for dividing the training and testing data (80 to 20 ration)
-
 def divide_traing_testing(a1, a2, data):
     test_limit = (data.shape[0] * 80) / 100
     for i_ in range(len(data)):
@@ -54,7 +53,6 @@ def loss(x, y):
 
 
 # this function is used for the ImageCreation for the first time, then after it will use to rewrite the Image;
-
 def createImage():
     def paint(event):
         x1, y1 = (event.x - 1), (event.y - 1)
@@ -86,8 +84,8 @@ def createImage():
 
 
 print("Loading the data into the Python Environment!")
-# the below section will load the dataset and divide it into train and test data!
 
+# the below section will load the data-set and divide it into train and test data!
 print("Dividing the data into the training and testing sets")
 data_airplane_test = []
 data_airplane_training = []
@@ -108,8 +106,7 @@ data_birthdaycake_training = []
 data_birthdaycake_training, data_birthdaycake_test = divide_traing_testing(data_birthdaycake_training,
                                                                            data_birthdaycake_test, data_birthday_cake)
 
-# Here, I am not using this four datasets!
-
+# Here, I am not using this four data-sets!
 training_data = []
 test_data = []
 output_label = []
@@ -134,10 +131,10 @@ test_data, x = make_training_array(test_data, data_line_test, 2, x)
 test_data, x = make_training_array(test_data, data_birthdaycake_test, 3, x)
 
 # Print total numbers of training simples and testing simples as well as the numbers of input(s)
-
 print("Number of training data simples: - ", len(training_data))  # 423139 total number of training data
 print("Number of testing data simples: -", len(test_data))  # 105781 total number of testing data
 print("Numbers of output nodes: -", counter_output_neurons)   # total number of output class (in this case 04)
+
 
 # This for loop will pop to the use to take an label for the data-set(please make sure to enter in a correct order)
 # mapping the output class to the user define input.
@@ -146,7 +143,6 @@ for i_ in range(0, counter_output_neurons):
     output_label.append(a)
 
 # The actual training process will start from here!
-
 for loop in range(0, loop_counter):   # this for loop does the entire training for 3 times
     if x == counter_output_neurons:
         input_neurons = 784  # defining the input size of the network as the data itself is the size of 784, one can confirm this by uncommenting the line 22.
@@ -212,13 +208,9 @@ for loop in range(0, loop_counter):   # this for loop does the entire training f
                 delta_wih = f1.dot(m1.T)
                 wih += delta_wih  # adding the newly calculated weight to the previous weight
 
-        # print(
-        #     "Test Data-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
-
-        counter = 0
+        counter = 0     # this will use to calculate the accuracy for the testing data-set
 
         # Evaluating the train model on the testing data
-
         for da_ in range(len(test_data)):
             da_ = int(np.random.uniform(0, len(test_data)))
             m1 = np.reshape(test_data[da_][0], (784, 1))
@@ -234,7 +226,6 @@ for loop in range(0, loop_counter):   # this for loop does the entire training f
         print("Round:- ", loop + 1, "Accuracy", (counter / float(len(test_data))) * 100)
 
     # Now from here on, the program will popup the drawing board to take user input!
-
     if loop == (loop_counter - 1):
         ch = input("Enter any Number: ")
 
