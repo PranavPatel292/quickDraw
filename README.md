@@ -3,7 +3,7 @@
 This code will only work on thr Python with 64-bit installer
 
 
-Go go this [website](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/numpy_bitmap;tab=objects?pli=1&prefix=), download the dataset(s) you want to use. Here there are lots of datasets avialable for each Doodle. One can get a complete infomation on Quick Draw [page](https://quickdraw.withgoogle.com/) or via the Github [page](https://github.com/googlecreativelab/quickdraw-dataset). I am using the Line, the Airplane, the Cake and the Computer dataset. 
+Go to this [website](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/numpy_bitmap;tab=objects?pli=1&prefix=), download the dataset(s) you want to use. Here there are lots of datasets avialable for each Doodle. One can get a complete infomation on Quick Draw [page](https://quickdraw.withgoogle.com/) or via the Github [page](https://github.com/googlecreativelab/quickdraw-dataset). I am using the Line, the Airplane, the Cake and the Computer dataset. 
 
 
 After this pull the file Google_Doodle_Two_layer.py from this repo, and change the path of the dataset and the input_image! (Explicitly mentationed in the code as well)
