@@ -10,13 +10,12 @@ from PIL import ImageTk, Image, ImageDraw
 import PIL
 loop_counter = 3    # a counter deciding the numbers of time the training should perform
 
-# loading the data from the local device
+# loading the data from the local device, change this lines if your path is not same
 data_airplane = np.load("./src/dataset/airplane_quickdraw.npy")
 data_computer = np.load("./src/dataset/computer_quickdraw.npy")
 data_line = np.load("./src/dataset/line_quickdaw.npy")
-data_lighting = np.load("./src/dataset/lighting_quickdraw.npy")
+
 data_birthday_cake = np.load("./src/dataset/birthdaycake_quickdraw.npy")
-data_star = np.load("./src/dataset/star_quickdraw.npy")
 
 # function for dividing the training and testing data (80 to 20 ration)
 def divide_traing_testing(a1, a2, data):
