@@ -2,8 +2,8 @@
 # Python version: - 3.7
 # PACKAGES
 # Numpy, PILLOW-PIL
-
-# this import statements are used to import the Numpy (for the mathematical calculation) and some drawing library to create the drawing board (poped at the end of the program to take user input)
+# the import statements are used to import the Numpy (for the mathematical calculation) and some drawing library to create the drawing board (poped at the end of the program to take user input)
+# If you are confused about the Drawing Board check this link (https://www.youtube.com/watch?v=rriS3dYe02g) for Visual representation of working and use of drawing board in this project.
 import numpy as np
 from tkinter import *
 from PIL import ImageTk, Image, ImageDraw
