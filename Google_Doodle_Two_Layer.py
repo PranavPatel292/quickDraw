@@ -3,7 +3,7 @@
 # PACKAGES
 # Numpy, PILLOW-PIL
 
-
+# this import statements are used to import the Numpy (for the mathematical calculation) and some drawing library to create the drawing board (poped at the end of the program to take user input)
 import numpy as np
 from tkinter import *
 from PIL import ImageTk, Image, ImageDraw
@@ -23,8 +23,9 @@ def divide_traing_testing(a1, a2, data):
     test_limit = (data.shape[0] * 80) / 100
     for i_ in range(len(data)):
         if i_ <= test_limit:
+            # print(np.array(data[i_]))
             a1.append(data[i_] / 255.0)
-            # print(np.array(data[i_]).shape)
+            # print(a1[i_])
         else:
             a2.append(data[i_] / 255.0)
     return a1, a2
@@ -139,7 +140,7 @@ print("Numbers of output nodes: -", counter_output_neurons)   # total number of 
 # This for loop will pop to the use to take an label for the data-set(please make sure to enter in a correct order)
 # mapping the output class to the user define input.
 for i_ in range(0, counter_output_neurons):
-    a = input("Enter your Label for the Data, Make sure it is in correct order")
+    a = input("Enter your Label for the Data, Make sure it is in correct order => Aeroplane, Computer, Line and Cake")  # these 2 lines will create the output label and map it with the target line
     output_label.append(a)
 
 # The actual training process will start from here!
@@ -225,13 +226,13 @@ for loop in range(0, loop_counter):   # this for loop does the entire training f
 
         print("Round:- ", loop + 1, "Accuracy", (counter / float(len(test_data))) * 100)
 
-    # Now from here on, the program will popup the drawing board to take user input!
+    # Now from here on, the program will popup the drawing board to take user input! If you don not want, one can comment out the rest of the code.
     if loop == (loop_counter - 1):
         ch = input("Enter any Number: ")
 
         while ch != 0:
             user_image = createImage()
-            # print user_image
+            # print(user_image)
             hidden_01 = sigmoid(np.dot(wih, user_image))
             hidden_02 = sigmoid(np.dot(whh, hidden_01))
             output = sigmoid(np.dot(who, hidden_02))
